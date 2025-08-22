@@ -15,17 +15,6 @@
         "templates/*/rofl-template.yaml"
       ],
       "matchStrings": [
-        "\\s+(?<depName>firmware|kernel|stage2):\\s+https://github.com/oasisprotocol/oasis-boot/releases/download/(?<currentValue>v\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
-      ],
-      "datasourceTemplate": "github-release-attachments",
-      "depNameTemplate": "oasisprotocol/oasis-boot"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "templates/*/rofl-template.yaml"
-      ],
-      "matchStrings": [
         "\\s+runtime:\\s+https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F(?<currentValue>v\\d+\\.\\d+\\.\\d+)/rofl-containers#(?<currentDigest>[a-f0-9]{64})"
       ],
       "datasourceTemplate": "github-release-attachments",
