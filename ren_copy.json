@@ -11,16 +11,15 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update container runtime dependencies in rofl-template.yaml files",
       "managerFilePatterns": [
         "templates/*/rofl-template.yaml"
       ],
       "matchStrings": [
-        "\\s+runtime:\\s+https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2Fv(?<currentValue>\\d+\\.\\d+\\.\\d+)/rofl-containers#[a-f0-9]{64}"
+        "\\s+runtime:\\s+https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F(?<currentValue>v\\d+\\.\\d+\\.\\d+)/rofl-containers#(?<currentDigest>[a-f0-9]{64})"
       ],
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-release-attachments",
       "depNameTemplate": "oasisprotocol/oasis-sdk",
-      "extractVersionTemplate": "^rofl-containers/v(?<version>.*)$"
+      "extractVersionTemplate": "^rofl-containers/(?<version>v.*)$"
     }
   ],
   "rangeStrategy": "bump"
