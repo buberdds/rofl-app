@@ -1,7 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":disableDependencyDashboard"],
-  "prHourlyLimit": 100,
+  "prHourlyLimit": 110,
+  "enabledManagers": [
+    "custom.regex"
+  ],
   "packageRules": [
     {
       "groupName": "lint dependencies",
@@ -30,9 +33,11 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["templates/*/rofl-template.yaml"],
+      "managerFilePatterns": [
+        "templates/*/rofl-template.yaml"
+      ],
       "matchStrings": [
-        "\\s+(?<depName>firmware|kernel|stage2):\\s+https://github.com/oasisprotocol/oasis-boot/releases/download/(?<currentValue>v\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
+        "\\s+(?<depName>firmware):\\s+https://github\\.com/oasisprotocol/oasis-boot/releases/download/(?<currentValue>v\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
       ],
       "datasourceTemplate": "github-release-attachments",
       "depNameTemplate": "oasisprotocol/oasis-boot"
