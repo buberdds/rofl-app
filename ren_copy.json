@@ -11,7 +11,6 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update container runtime dependencies in rofl-template.yaml files",
       "managerFilePatterns": [
         "templates/*/rofl-template.yaml"
       ],
