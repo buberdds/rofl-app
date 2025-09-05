@@ -48,12 +48,10 @@
         "templates/*/rofl-template.yaml"
       ],
       "matchStrings": [
-        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2Fv(?<currentValue>\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
+        "https://github.com/oasisprotocol/oasis-sdk/releases/download/(?<currentValue>rofl-containers%2Fv\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
       ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "oasisprotocol/oasis-sdk",
-      "versioningTemplate": "semver",
-      "extractVersionTemplate": "^rofl-containers/v(?<version>.*)$"
+      "datasourceTemplate": "github-release-attachments",
+      "depNameTemplate": "oasisprotocol/oasis-sdk"
     }
   ],
   "rangeStrategy": "bump"
