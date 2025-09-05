@@ -2,9 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":disableDependencyDashboard"],
   "prHourlyLimit": 110,
-  "enabledManagers": [
-    "custom.regex"
-  ],
+  "enabledManagers": ["custom.regex"],
   "packageRules": [
     {
       "groupName": "lint dependencies",
@@ -33,9 +31,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "templates/*/rofl-template.yaml"
-      ],
+      "managerFilePatterns": ["templates/*/rofl-template.yaml"],
       "matchStrings": [
         "https://github.com/oasisprotocol/oasis-boot/releases/download/(?<currentValue>v\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
       ],
@@ -44,14 +40,13 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "templates/*/rofl-template.yaml"
-      ],
+      "managerFilePatterns": ["templates/*/rofl-template.yaml"],
       "matchStrings": [
-        "https://github.com/oasisprotocol/oasis-sdk/releases/download/(?<currentValue>rofl-containers%2Fv\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
+        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2Fv(?<currentValue>\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
       ],
       "datasourceTemplate": "github-release-attachments",
-      "depNameTemplate": "oasisprotocol/oasis-sdk"
+      "depNameTemplate": "oasisprotocol/oasis-sdk",
+      "currentValueTemplate": "rofl-containers/v{{currentValue}}"
     }
   ],
   "rangeStrategy": "bump"
