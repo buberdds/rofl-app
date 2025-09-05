@@ -33,9 +33,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "templates/*/rofl-template.yaml"
-      ],
+      "managerFilePatterns": ["templates/*/rofl-template.yaml"],
       "matchStrings": [
         "https://github.com/oasisprotocol/oasis-boot/releases/download/(?<currentValue>v\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
       ],
@@ -46,7 +44,7 @@
       "customType": "regex",
       "managerFilePatterns": ["templates/*/rofl-template.yaml"],
       "matchStrings": [
-        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers(?:%2F|/)(?<currentValue>v\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
+        "https://github.com/oasisprotocol/oasis-sdk/releases/download/(?<currentValue>rofl-containers(?:%2F|/)v\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
       ],
       "datasourceTemplate": "github-release-attachments",
       "depNameTemplate": "oasisprotocol/oasis-sdk"
