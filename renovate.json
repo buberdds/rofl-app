@@ -7,7 +7,7 @@
     "oasis-sdk-rofl": {
       "defaultRegistryUrlTemplate": "https://api.github.com/repos/oasisprotocol/oasis-sdk/releases",
       "transformTemplates": [
-        "{\"releases\":$map($filter($$, function($v){$contains($v.tag_name, 'rofl-containers/')}), function($r){{\"version\":$substring($r.tag_name, 17),\"sourceUrl\":\"https://github.com/oasisprotocol/oasis-sdk\",\"changelogUrl\":$r.html_url,\"releaseTimestamp\":$r.published_at}}),\"sourceUrl\":\"https://github.com/oasisprotocol/oasis-sdk\",\"homepage\":\"https://github.com/oasisprotocol/oasis-sdk\"}"
+        "{ \"releases\": $filter($, function($v) { $contains($v.tag_name, \"rofl-containers/\") }).{ \"version\": $substring(tag_name, 17), \"releaseTimestamp\": published_at, \"changelogUrl\": html_url }, \"sourceUrl\": \"https://github.com/oasisprotocol/oasis-sdk\", \"homepage\": \"https://github.com/oasisprotocol/oasis-sdk\" }"
       ]
     }
   },
