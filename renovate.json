@@ -3,14 +3,6 @@
   "extends": ["config:base", ":disableDependencyDashboard"],
   "prHourlyLimit": 110,
   "enabledManagers": ["custom.regex"],
-  "customDatasources": {
-    "oasis-sdk-rofl": {
-      "defaultRegistryUrlTemplate": "https://api.github.com/repos/oasisprotocol/oasis-sdk/releases",
-      "transformTemplates": [
-        "{ \"releases\": $filter($, function($v) { $contains($v.tag_name, \"rofl-containers/\") }).{ \"version\": $substring(tag_name, 17), \"releaseTimestamp\": published_at, \"changelogUrl\": html_url }, \"sourceUrl\": \"https://github.com/oasisprotocol/oasis-sdk\", \"homepage\": \"https://github.com/oasisprotocol/oasis-sdk\" }"
-      ]
-    }
-  },
   "packageRules": [
     {
       "groupName": "lint dependencies",
@@ -50,10 +42,11 @@
       "customType": "regex",
       "managerFilePatterns": ["templates/*/rofl-template.yaml"],
       "matchStrings": [
-        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2Fv(?<currentValue>\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
+        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2Fv(?<currentValue>\\d+\\.\\d+\\.\\d+)/(?<depName>[^#]+)#(?<currentDigest>[a-f0-9]{64})"
       ],
-      "datasourceTemplate": "custom.oasis-sdk-rofl",
-      "depNameTemplate": "oasisprotocol/oasis-sdk-rofl-containers",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "oasisprotocol/oasis-sdk",
+      "extractVersionTemplate": "^rofl-containers/v(?<version>.*)$",
       "versioningTemplate": "semver"
     }
   ],
