@@ -44,7 +44,7 @@
       "matchStrings": [
         "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2Fv(?<currentValue>\\d+\\.\\d+\\.\\d+)/[^#]+#(?<currentDigest>[a-f0-9]{64})"
       ],
-      "datasourceTemplate": "github-release-attachments",
+      "datasourceTemplate": "npm",
       "depNameTemplate": "oasisprotocol/oasis-sdk",
       "currentValueTemplate": "rofl-containers/v{{currentValue}}"
     }
