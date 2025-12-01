@@ -46,7 +46,7 @@
       ],
       "datasourceTemplate": "github-release-attachments",
       "depNameTemplate": "oasisprotocol/oasis-sdk",
-      "versioning": "semver"
+      "versioningTemplate": "semver"
     }
   ],
   "rangeStrategy": "bump"
