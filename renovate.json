@@ -46,7 +46,7 @@
       ],
       "datasourceTemplate": "github-release-attachments",
       "depNameTemplate": "oasisprotocol/oasis-sdk",
-      "extractVersionTemplate": "^rofl-containers/(?<version>.*)$",
+      "packageNameTemplate": "rofl-containers/{{packageName}}",
       "versioningTemplate": "semver",
       "autoReplaceStringTemplate": "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F{{newValue}}/rofl-containers#{{asset.digest}}"
     }
