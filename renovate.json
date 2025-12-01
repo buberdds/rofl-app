@@ -44,11 +44,11 @@
       "matchStrings": [
         "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F(?<currentValue>v\\d+\\.\\d+\\.\\d+)/rofl-containers#(?<currentDigest>[a-f0-9]{64})"
       ],
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "regex",
       "depNameTemplate": "oasisprotocol/oasis-sdk",
       "extractVersionTemplate": "^rofl-containers/(?<version>.*)$",
       "versioningTemplate": "semver",
-      "autoReplaceStringTemplate": "runtime: https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F{{newValue}}/rofl-containers"
+      "autoReplaceStringTemplate": "runtime: https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F{{newValue}}/rofl-containers#{{currentDigest}}"
     }
   ],
   "rangeStrategy": "bump"
