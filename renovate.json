@@ -26,14 +26,9 @@
       "packageNames": ["node"],
       "matchDepTypes": ["engines"],
       "rangeStrategy": "auto"
-    },
-    {
-      "matchPackageNames": ["oasisprotocol/oasis-sdk"],
-      "matchDatasources": ["github-release-attachments"],
-      "excludeErrorMessages": ["lookupUpdates error"],
-      "labels": ["digest-issue"]
     }
   ],
+  "ignoreErrors": ["lookupUpdates error"],
   "customManagers": [
     {
       "customType": "regex",
