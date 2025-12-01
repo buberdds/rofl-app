@@ -42,12 +42,10 @@
       "customType": "regex",
       "managerFilePatterns": ["templates/*/rofl-template.yaml"],
       "matchStrings": [
-        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2Fv(?<currentValue>\\d+\\.\\d+\\.\\d+)/(?<depName>[^#]+)#(?<currentDigest>[a-f0-9]{64})"
+        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F(?<currentValue>v\\d+\\.\\d+\\.\\d+)/rofl-containers#(?<currentDigest>[a-f0-9]{64})"
       ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "oasisprotocol/oasis-sdk",
-      "extractVersionTemplate": "^rofl-containers/v(?<version>.*)$",
-      "versioningTemplate": "semver"
+      "datasourceTemplate": "github-release-attachments",
+      "depNameTemplate": "oasisprotocol/oasis-sdk"
     }
   ],
   "rangeStrategy": "bump"
