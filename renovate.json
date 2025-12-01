@@ -26,6 +26,12 @@
       "packageNames": ["node"],
       "matchDepTypes": ["engines"],
       "rangeStrategy": "auto"
+    },
+    {
+      "matchPackageNames": ["oasisprotocol/oasis-sdk"],
+      "matchDatasources": ["github-release-attachments"],
+      "excludeErrorMessages": ["lookupUpdates error"],
+      "labels": ["digest-issue"]
     }
   ],
   "customManagers": [
@@ -42,7 +48,7 @@
       "customType": "regex",
       "managerFilePatterns": ["templates/*/rofl-template.yaml"],
       "matchStrings": [
-        "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F(?<currentValue>v\\d+\\.\\d+\\.\\d+)/rofl-containers#(?<currentDigest>[a-f0-9]{64})"
+        "https://github.com/oasisprotocol/oasis-sdk/releases/download/(?<currentValue>rofl-containers%2Fv\\d+\\.\\d+\\.\\d+)/rofl-containers#(?<currentDigest>[a-f0-9]{64})"
       ],
       "datasourceTemplate": "github-release-attachments",
       "depNameTemplate": "oasisprotocol/oasis-sdk",
