@@ -45,7 +45,8 @@
         "https://github.com/oasisprotocol/oasis-sdk/releases/download/rofl-containers%2F(?<currentValue>v\\d+\\.\\d+\\.\\d+)/rofl-containers#(?<currentDigest>[a-f0-9]{64})"
       ],
       "datasourceTemplate": "github-release-attachments",
-      "depNameTemplate": "oasisprotocol/oasis-sdk:rofl-containers/"
+      "depNameTemplate": "oasisprotocol/oasis-sdk",
+      "extractVersion": "^rofl-containers/(?<version>.*)$"
     }
   ],
   "rangeStrategy": "bump"
